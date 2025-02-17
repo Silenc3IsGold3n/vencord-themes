@@ -586,6 +586,10 @@ aka. Fancy Text Headers */
 [class^="childWrapper"]{ /* no color servers */
     background-color: #292c3c;
 }
+
+[class^="tree"]{ /* fix an outline issue on focus change */
+    outline-width: 0px;
+}
   
 [class^="container"]>[class^="membersWrap"]:after {
     content: "members";
