@@ -611,3 +611,14 @@ aka. Fancy Text Headers */
     font-size: 0.7rem;
     z-index: 10;
 }
+
+/*remove discovery icon*/
+div[class^="footer_"]{
+    display: none;
+}
+div[class^="upperBadge_"]{
+    display: none;
+}
+div[class^="tooltipContent_"] > div[class^="row_"]:has(path[fill-rule="evenodd"]):has(svg[class^="activityIcon_"]){
+    display: none;
+} 
