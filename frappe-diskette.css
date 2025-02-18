@@ -626,3 +626,13 @@ div[class^="upperBadge_"]{
 div[class^="tooltipContent_"] > div[class^="row_"]:has(path[fill-rule="evenodd"]):has(svg[class^="activityIcon_"]){
     display: none;
 } 
+
+/* catppuccin icon */
+[class^="childWrapper__"]> svg:not(svg[class^="favoriteIcon"]) {
+	background: url('https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/logos/exports/1544x1544_circle.png');
+	background-color: transparent !important;
+	background-size: cover;
+}
+[class^="childWrapper__"]> svg:not(svg[class^="favoriteIcon"]) > path {
+	fill:none;
+}
