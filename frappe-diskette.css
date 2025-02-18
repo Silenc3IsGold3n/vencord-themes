@@ -49,6 +49,39 @@
     --borders: #51576d 1px solid;
     --bg-brand: #ca9ee6;
     --pad: 20px;
+    --pink: #e78284;
+	--pink-1: #d16c89;
+    --red-400: var(--pink-1);
+	--pink-2: #af4e6c;
+	--purple: #ca9ee6;
+	--purple-1: #ab87d6;
+	--purple-2: #8d69b5;
+	--cyan: #85c1dc;
+	--yellow: #e5c890;
+	--green: #a6d189;
+	--green-1: #87c282;
+	--green-2: #68a364;
+
+    --bg-0: #303446; /* main background color. */
+	--bg-1: #292c3c; /* background color for secondary elements like code blocks, embeds, etc. */
+	--bg-2: #414559; /* color of neutral buttons. */
+	--bg-3: #51576d; /* color of neutral buttons when hovered. */
+	
+	
+	--green-360: var(--green); /* vc icon on server */
+	--green-430: var(--green); /* green buttons */
+	--green-500: var(--green-1);
+	--green-530: var(--green-2);
+    --white-500: var(--txt-dark); /* THE BANE OF MY EXISTENCE */
+
+    --primary-800: var(--bg-0); /* call background */
+    --red-430: var(--pink);
+    --red-500: var(--pink-1); /* button hover */
+    --status-danger-background: var(--red-430);
+    --interactive-normal: var(--yellow);
+    --text-positive: var(--pink-2);
+    --green-330: var(--text-positive);
+    
 }
 
 :root {
@@ -635,4 +668,56 @@ div[class^="tooltipContent_"] > div[class^="row_"]:has(path[fill-rule="evenodd"]
 }
 [class^="childWrapper__"]> svg:not(svg[class^="favoriteIcon"]) > path {
 	fill:none;
+}
+
+/*call screen*/
+
+[class^="callContainer_"] {
+	overflow-y: visible;
+	background:#292c3c !important;
+    overflow-x: visible;
+	border: var(--borders);
+	transition: border-color var(--border-transition);
+	&:hover {
+		border-color: var(--bordersH);
+		&::after {
+			color: var(--bordersH);
+		}
+	}
+    z-index: 0;
+}
+[class^="callContainer_"] > [class^='topControls_'] section {
+	border: none;
+	&::after {
+		content: '';
+	}
+}
+[class^="callContainer_"]::after {
+	content: 'call';
+    position: absolute;
+    top: -0.4rem;
+    left: 1rem;
+    background-color: var(--bg-1);
+    padding: 2px 5px;
+    color: var(--accent);
+    font-family: var(--font-display);
+    font-size: 0.7rem;
+    z-index: 10;
+    width:fit-content;
+}
+
+rect[mask*="svg-mask-status-dnd"]{
+    fill:var(--red-400)
+}
+rect[mask*="svg-mask-status-online"]{
+    fill:var(--green)
+}
+rect[mask*="svg-mask-status-idle"]{
+    fill:var(--yellow)
+}
+[class^="lottieIcon__"]{
+    color:pink;
+}
+[mask*="#svg-mask-channel-call-control-button"]:has(button[class*="white_"]) > div > [class*="white_"]{
+    background-color:var(--cyan);
 }
